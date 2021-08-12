@@ -387,6 +387,11 @@ class WordCloud(object):
         self
         """
         return self.generate_from_frequencies(frequencies)
+    
+
+
+    def cleanUpDisplayWord(self,word):
+        return word[-1]
 
     def generate_from_frequencies(self, frequencies, max_font_size=None):  # noqa: C901
         """Create a word_cloud from words and frequencies.
@@ -505,7 +510,7 @@ class WordCloud(object):
                 transposed_font = ImageFont.TransposedFont(
                     font, orientation=orientation)
                 # get size of resulting text
-                box_size = draw.textsize(word, font=transposed_font)
+                box_size = draw.textsize(self.cleanUpDisplay(word), font=transposed_font)
                 # find possible places using integral image:
                 result = occupancy.sample_position(box_size[1] + self.margin,
                                                    box_size[0] + self.margin,
