@@ -668,7 +668,7 @@ class WordCloud(object):
                 font, orientation=orientation)
             pos = (int(position[1] * self.scale),
                    int(position[0] * self.scale))
-            draw.text(pos, word, fill=color, font=transposed_font)
+            draw.text(pos, self.cleanUpDisplayWord(word), fill=color, font=transposed_font)
 
         return self._draw_contour(img=img)
 
