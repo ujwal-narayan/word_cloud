@@ -391,7 +391,7 @@ class WordCloud(object):
 
 
     def cleanUpDisplayWord(self,word):
-        return word[-1]
+        return word[:-1]
 
     def generate_from_frequencies(self, frequencies, max_font_size=None):  # noqa: C901
         """Create a word_cloud from words and frequencies.
