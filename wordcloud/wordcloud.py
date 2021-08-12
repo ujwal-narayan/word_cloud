@@ -534,7 +534,7 @@ class WordCloud(object):
 
             x, y = np.array(result) + self.margin // 2
             # actually draw the text
-            draw.text((y, x), word, fill="white", font=transposed_font)
+            draw.text((y, x), self.cleanUpDisplayWord(word), fill="white", font=transposed_font)
             positions.append((x, y))
             orientations.append(orientation)
             font_sizes.append(font_size)
